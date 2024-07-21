@@ -25,11 +25,11 @@ public class RequestHeaderServlet extends HttpServlet {
         System.out.println("request.getMethod() = " + request.getMethod()); //GET
         System.out.println("request.getProtocol() = " + request.getProtocol()); //HTTP/1.1
         System.out.println("request.getScheme() = " + request.getScheme()); //http
-// http://localhost:8080/request-header
+        // http://localhost:8080/request-header
         System.out.println("request.getRequestURL() = " + request.getRequestURL());
-// /request-header
+        // /request-header
         System.out.println("request.getRequestURI() = " + request.getRequestURI());
-//username=hi
+        //username=hi
         System.out.println("request.getQueryString() = " +
                 request.getQueryString());
         System.out.println("request.isSecure() = " + request.isSecure()); //https 사용유무
@@ -39,11 +39,6 @@ public class RequestHeaderServlet extends HttpServlet {
 
     private void printHeaders(HttpServletRequest request) {
         System.out.println("--- Headers - start ---");
-//        Enumeration<String> headerNames = request.getHeaderNames();
-//        while (headerNames.hasMoreElements()){
-//            String headerName = headerNames.nextElement();
-//            System.out.println(headerName + " = " + headerName);
-//        }
         request.getHeaderNames().asIterator()
                 .forEachRemaining(headerName -> System.out.println(headerName + ": "
                         + request.getHeader(headerName)));

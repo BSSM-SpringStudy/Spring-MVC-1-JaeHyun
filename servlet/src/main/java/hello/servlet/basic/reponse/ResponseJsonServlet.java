@@ -15,13 +15,13 @@ public class ResponseJsonServlet extends HttpServlet {
     private ObjectMapper objectMapper = new ObjectMapper();
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//Content-Type: application/json
+        //Content-Type: application/json
         response.setHeader("content-type", "application/json");
         response.setCharacterEncoding("utf-8");
         HelloData data = new HelloData();
         data.setUsername("kim");
         data.setAge(20);
-//{"username":"kim","age":20}
+        //{"username":"kim","age":20}
         String result = objectMapper.writeValueAsString(data);
         response.getWriter().write(result);
     }
